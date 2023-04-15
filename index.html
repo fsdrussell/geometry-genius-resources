@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+
+</head>
+<!-- nav section ------------ -->
+
+<nav class="bg-blue-100 px-4 py-2 mb-4 flex justify-between ml-6 mr-6 mt-10">
+    <div>
+        <h1 class="text-5xl font-bold">Interactive</h1>
+        <h3 class="text-2xl text-gray-400 font-semibold">Geomatry Genius</h3>
+    </div>
+    <button id="btn-blog" class="bg-blue-400 w-20 h-8 rounded-lg text-white mt-5">Blog</button>
+</nav>
+<!-- grid section  -->
+<div class="grid grid-cols-4 ml-6 mr-6">
+    <div class="align-top border-2 rounded-lg h-96 w-4/5"> <img class="mx-auto mt-5 w-1/2 h-auto" src="images/triangle.png" alt="">
+    <h1 class="text-3xl text-center mt-5 font-semibold"> Triangle</h1>
+    <h5 class="text-center mt-2">Area (A) = 0.5 &times b &times h</h5>
+
+    <div class="flex items-center justify-center"> <input id="triangle-b" class="bg-gray-200 mt-2 mr-6 w-1/5 justify-items-center" type="text" placeholder="b"> <input id="triangle-h" class="bg-gray-200 ml-6 mt-2 w-1/5" type="text" name="cm" placeholder="h" > </div>
+         <div class="flex justify-center items-center mt-5"> <button id="triangle-btn" class="bg-blue-700 rounded-lg w-72 flex-items-center px-2 py-4 text-white  font-bold">Calculate</button> </div>
+    </div>
+
+    <!-- rectangle section ------------------------------------ -->
+
+    <div class="align-top border-2 rounded-lg h-96 w-4/5"><img class="w-1/2 h-auto mx-auto mt-8" src="images/rectangle.png" alt="">
+        <h1 class="text-3xl text-center mt-5 font-semibold">Rectangle</h1>
+        <h5 class="text-center mt-2">Area (A) = 0.5 &times w &times l</h5>
+        <div class="flex items-center justify-center"> <input id="rectangle-w" class="bg-gray-200 mt-2 mr-6 w-1/5 justify-items-center" type="text" placeholder="w"> <input id="rectangle-l" class="bg-gray-200 ml-6 mt-2 w-1/5" type="text" name="cm" placeholder="l" > </div>
+        <div class="flex justify-center items-center mt-8"> <button id="btn-rectangle" class="bg-blue-700 rounded-lg w-72 flex-items-center px-2 py-4 text-white  font-bold">Calculate</button> </div>
+        <p id="warning"></p>
+    </div>
+    <div class="align-top border-2 rounded-lg h-96 w-4/5"><img class="w-1/2 h-auto mx-auto mt-8" src="images/parallelogram.png" alt=""><h1 class="text-3xl text-center mt-5 font-semibold"> Parallelogram</h1>
+        <h5 class="text-center mt-2">Area (A) = 0.5 &times b &times h</h5>
+        <div class="text-center mt-2"> 
+            <h5 class="mb-5">b=<span id="p-Value-one">10</span> cm, h=<span id="p-value-two">12</span> cm</h5>
+             <div class="flex justify-center items-center mt-12"> <button id="btn-parallelogram" class="bg-blue-700 rounded-lg w-72 flex-items-center px-2 py-4 text-white  font-bold">Calculate</button> </div>
+        </div> 
+    </div>
+    <div> <div class="align-top border-2 rounded-lg w-full text-center"> <h3 class="mt-4 font-bold underline">Area Calculation</h3></div>    
+ <!-- convert button section --------------------->
+<div class="flex justify-between gap-x-14 pr-8"> <h3 class="mt-8 font-bold">1.Triangle = <span class="" id="Triangle-result"></span></h3> <button class="mt-8 text-white bg-sky-400 px-2 rounded-lg">Convert to m²</button></div>
+
+ <div class="flex justify-between gap-x-14 pr-8"> <h3 class="mt-8 font-bold">2. Rectangle = <span id="rectangle-result"></span></h3>
+    <button class="mt-8 text-white bg-sky-400 px-2 rounded-lg">Convert to m²</button></div>
+ <div class="flex justify-between gap-x-14 pr-8"><h3 class="mt-8 font-bold">3. Parallelogram = <span id="parallelogram-result"></span></h3>
+    <button class="mt-8 text-white bg-sky-400 px-2 rounded-lg">Convert to m²</button></div>
+
+ <div class="flex justify-between gap-x-14 pr-8"><h3 class="mt-8 font-bold">4. Rohmbus = <span id="rohmbus-result"></span></h3>
+    <button class="mt-8 text-white bg-sky-400 px-2 rounded-lg">Convert to m²</button></div>
+
+ <div class="flex justify-between gap-x-14 pr-8"><h3 class="mt-8 font-bold">5. Pentagon = <span id="pentagon-result"></span></h3>
+    <button class="mt-8 text-white bg-sky-400 px-2 rounded-lg">Convert to m²</button></div>
+
+<div class="flex justify-between gap-x-14 pr-8"> <h3 class="mt-8 font-bold">6. Ellipse = <span id="ellipse-result"></span></h3>
+    <button class="mt-8 text-white bg-sky-400 px-2 rounded-lg">Convert to m²</button></div>
+    </div>
+</div>
+
+<!-- second grid cols -->
+
+<!-- --------------- Rohmbus Section -------------------- -->
+<div class="grid grid-cols-4 ml-6 mr-6 mt-4">
+    <div class="align-top border-2 rounded-lg h-96 w-4/5"> <img class="mx-auto mt-5 w-1/2 h-auto" src="images/rhombus.png" alt="">
+    <h1 class="text-3xl text-center mt-5 font-semibold">Rohmbus</h1>
+    <h5 class="text-center mt-2">Area (A) = 0.5 &times d1 &times d2</h5>
+
+    <div class="flex items-center justify-center"> <h5>d1 = <span id="ro-value-one">16</span> cm, d2 = <span id="ro-value-two">8</span> cm</h5>
+    </div>
+         <div class="flex justify-center items-center mt-5"> <button id="btn-rohmbus" class="bg-blue-700 rounded-lg w-72 flex-items-center px-2 py-4 text-white  font-bold">Calculate</button> </div>
+    </div>
+
+    <!-- ---------------pentagon section -------------- -->
+
+    <div class="align-top border-2 rounded-lg h-96 w-4/5"><img class="w-2/5 h-auto mx-auto mt-4" src="images/pentagon.png" alt="">
+        <h1 class="text-3xl text-center mt-5 font-semibold">Pentagon</h1>
+        <h5 class="text-center mt-2">Area (A) = 0.5 &times p &times b</h5>
+        <div class="flex items-center justify-center"> 
+            <h5>p = <span id="pen-value-one">6</span> cm , b= <span id="pen-value-two">10</span>cm </h5> </div>
+        <div class="flex justify-center items-center mt-6"> <button id="btn-pentagon"  class="bg-blue-700 rounded-lg w-72 flex-items-center px-2 py-4 text-white  font-bold">Calculate</button> </div>
+    </div>
+
+    <!-- --------------------Ellipse section --------------- -->
+
+    <div class="align-top border-2 rounded-lg h-96 w-4/5"><img class="w-1/2 h-auto mx-auto mt-4" src="images/ellipse.png" alt=""><h1 class="text-3xl text-center mt-5 font-semibold">Ellipse</h1>
+        <div class="text-center mt-2"> 
+            <h5>Area (A) = πab</h5>
+            <h5 class="text-center">a = <span id="el-value-one">10</span>cm b = <span id="el-value-two">4</span>cm</h5>
+            <div class="flex justify-center items-center mt-12"> <button id="btn-ellipse" class="bg-blue-700 rounded-lg w-72 flex-items-center px-2 py-4 text-white  font-bold">Calculate</button> </div>
+        </div>
+    
+    </div>
+    
+</div>
+<section class="mt-10">
+
+<h1 class="mt-10">new</h1>
+
+<body>
+    <script src="genius.js"></script>
+</body>
+
+</html>
